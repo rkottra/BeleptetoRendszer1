@@ -3,11 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { ElerhetosegekComponent } from './elerhetosegek/elerhetosegek.component';
 import { IndexComponent } from './index/index.component';
 import { KategoriakComponent } from './kategoriak/kategoriak.component';
-import { TermekComponent } from './termek/termek.component';
+import { TermekComponent } from './termek/termekReszletes.component';
 
 const routes: Routes = [
   {
     path: "",
+    redirectTo: "index",
+    pathMatch:"full"
+  },
+  {
+    path: "index",
     component: IndexComponent
   },
   {
@@ -16,7 +21,8 @@ const routes: Routes = [
   },
   {
     path: "kategoriak",
-    component: KategoriakComponent
+    component: KategoriakComponent,
+    
   },
   {
     path: "elerhetosegek",

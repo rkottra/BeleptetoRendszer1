@@ -1,0 +1,10 @@
+<div class="termek">
+    <b>
+        <a [routerLink]="'../termek/'+termek.nev" 
+                [state]="termek">{{termek.nev}}</a>
+    </b>
+    <p>{{termek.leiras}}</p>
+    <p>{{termek.ar}}-{{kedvezmeny}}% = {{termek.ar*((100-kedvezmeny)/100.0)}}.-Ft/kg</p>
+
+    <input type="button" value="Kosárba" (click)="kosarba()"/>
+</div>

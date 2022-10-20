@@ -9,10 +9,13 @@ import { LablecComponent } from './lablec/lablec.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { IndexComponent } from './index/index.component';
-import { TermekComponent } from './termek/termek.component';
+import { TermekComponent } from './termek/termekReszletes.component';
 import { KategoriakComponent } from './kategoriak/kategoriak.component';
 import { ElerhetosegekComponent } from './elerhetosegek/elerhetosegek.component';
 import { RouterModule } from '@angular/router';
+import { TermekEgyszeruComponent } from './termek/termekEgyszeru.component';
+import { KosarComponent } from './kosar/kosar.component';
+import { KosarService } from './kosar.service';
 
 @NgModule({
   declarations: [
@@ -23,8 +26,10 @@ import { RouterModule } from '@angular/router';
     MenuComponent,
     IndexComponent,
     TermekComponent,
+    TermekEgyszeruComponent,
     KategoriakComponent,
-    ElerhetosegekComponent
+    ElerhetosegekComponent,
+    KosarComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,9 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    KosarService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

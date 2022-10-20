@@ -1,10 +1,11 @@
-<div *ngFor="let termek of termekek">
-    <h5>
-        <a [routerLink]="'../termek/'+termek.nev" 
-                [state]="termek">{{termek.nev}}</a>
-    </h5>
-    <p>{{termek.leiras}}</p>
-    <p>{{termek.ar}}.-Ft/kg</p>
+<input type="number" 
+    [(ngModel)]="kedvezmeny" />
+
+<div class="lista">
+    <app-termekegyszeru 
+        *ngFor="let t of termekek" 
+        [termek]="t"
+        [kedvezmeny]="kedvezmeny"
+        (kosarbaEsemeny)="UjTermekKosarba($event)">
+    </app-termekegyszeru>
 </div>
-
-

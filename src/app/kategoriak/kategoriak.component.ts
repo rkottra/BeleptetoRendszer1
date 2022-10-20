@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { KosarService } from '../kosar.service';
 import { TermekModel } from '../models/termek.model';
 
 @Component({
@@ -8,6 +9,7 @@ import { TermekModel } from '../models/termek.model';
 })
 export class KategoriakComponent implements OnInit {
 
+  public kedvezmeny:number = 10;
   public termekek: TermekModel[] = [
     {
       nev: "Banán",
@@ -31,9 +33,15 @@ export class KategoriakComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private kosarszerviz:KosarService) { }
 
   ngOnInit(): void {
   }
 
+  UjTermekKosarba(UjTermek:TermekModel) {
+    
+    
+
+    this.kosarszerviz.Hozzaad(UjTermek, this.kedvezmeny);
+  }
 }

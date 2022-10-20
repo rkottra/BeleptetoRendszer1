@@ -6,8 +6,8 @@ import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-termek',
-  templateUrl: './termek.component.html',
-  styleUrls: ['./termek.component.css']
+  templateUrl: './termekReszletes.component.html',
+  styleUrls: ['./termekReszletes.component.css']
 })
 export class TermekComponent implements OnInit {
   
