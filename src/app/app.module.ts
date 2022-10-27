@@ -16,6 +16,9 @@ import { RouterModule } from '@angular/router';
 import { TermekEgyszeruComponent } from './termek/termekEgyszeru.component';
 import { KosarComponent } from './kosar/kosar.component';
 import { KosarService } from './kosar.service';
+import { SzereplokComponent } from './szereplok/szereplok.component';
+import { StarwarsService } from './starwars.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,16 +32,18 @@ import { KosarService } from './kosar.service';
     TermekEgyszeruComponent,
     KategoriakComponent,
     ElerhetosegekComponent,
-    KosarComponent
+    KosarComponent,
+    SzereplokComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [
-    KosarService
+    KosarService, StarwarsService
   ],
   bootstrap: [AppComponent]
 })

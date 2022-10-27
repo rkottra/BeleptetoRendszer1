@@ -19,6 +19,10 @@ export class MenuComponent implements OnInit {
     {
       title: "Elérhetőségek",
       link: "elerhetosegek", 
+    },
+    {
+      title: "Star wars szereplők",
+      link: "szereplok", 
     }
   ]
 
