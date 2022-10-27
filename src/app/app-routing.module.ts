@@ -22,7 +22,6 @@ const routes: Routes = [
   {
     path: "kategoriak",
     component: KategoriakComponent,
-    
   },
   {
     path: "elerhetosegek",

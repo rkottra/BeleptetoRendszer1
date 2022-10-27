@@ -39,9 +39,6 @@ export class KategoriakComponent implements OnInit {
   }
 
   UjTermekKosarba(UjTermek:TermekModel) {
-    
-    
-
     this.kosarszerviz.Hozzaad(UjTermek, this.kedvezmeny);
   }
 }
