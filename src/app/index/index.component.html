@@ -1,1 +1,75 @@
-<p>index works!</p>
+
+<div class="progressbar" [ngStyle]="{width: '45px'}"></div>
+<div class="progressbar" [ngStyle]="{'width': '45px'}"></div>
+<div class="progressbar" [ngStyle]="{'width.px': '45'}"></div>
+<div class="progressbar" [ngStyle]="{'width.px': 45}"></div>
+<!--<div class="progressbar" [ngStyle]="{'width.px': 45px}"></div>-->
+<div class="progressbar" [ngStyle]="{'width.px': szazalek}"></div>
+<div class="progressbar" [ngStyle]="{'width.px': szazalek, 'border-color': 'red'}"></div>
+<div class="progressbar" [ngStyle]="{'width.px': szazalek, 'border-width.px': szazalek/10, 'opacity': szazalek/100.0}"></div>
+<div class="progressbar" [ngStyle]="{'width.%': szazalek}"></div>
+
+
+<div [ngSwitch]="erdemjegy" [ngStyle]="{'font-size.pt': (erdemjegy*5)+10}">
+    <p *ngSwitchCase="1" >elégtelen</p>
+    <p *ngSwitchCase="2">elégséges</p>
+    <p *ngSwitchCase="3">közepes</p>
+    <p *ngSwitchCase="4">jó</p>
+    <p *ngSwitchCase="5">
+        <img src="https://play-lh.googleusercontent.com/GCfE1jvuZbzhEnllJk0FWVzkfMHPZUXH-oVBL6RBdxnlyJoxnsIN722m6HA8MHyQ2Ew=w240-h480-rw">
+    </p>
+</div>
+
+
+<select [(ngModel)]="erdemjegy">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+</select>
+
+<input type="range" min="0" max="100" [(ngModel)]="szazalek" />
+
+
+<br>
+<br>
+<br>
+
+<select [(ngModel)]="igazitas">
+    <option value="B">Balra</option>
+    <option value="J">Jobbra</option>
+    <option value="K">Középre</option>
+</select>
+<input type="text" [(ngModel)]="igazitas"/>
+
+<div [ngClass]="igazitas">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius facilis iste ipsum ducimus. Id nulla aspernatur aut ipsam facere accusamus saepe doloribus nemo quas obcaecati repudiandae, corporis ab sequi reprehenderit.
+    Quia perspiciatis accusamus modi ducimus nam atque illum in, est minus consectetur ipsa amet nulla natus? Voluptatibus atque cumque consectetur iusto, possimus nemo rem sed nisi quos id sint qui!
+    Sit dicta rerum libero. Eos error, quisquam ut cumque doloremque exercitationem, saepe non culpa, nam aliquid fugiat cum corrupti sit neque nulla! Magni deleniti iusto error architecto quo vitae consequuntur.
+</div>
+
+
+
+<select [(ngModel)]="igazitas2">
+    <option value="balra">Balra</option>
+    <option value="jobbra">Jobbra</option>
+    <option value="középre">Középre</option>
+</select>
+<input type="text" [(ngModel)]="igazitas2"/>
+
+<div [ngClass]="{'B':igazitas2=='balra', 'K':igazitas2=='középre', 'J':igazitas2=='jobbra'}">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius facilis iste ipsum ducimus. Id nulla aspernatur aut ipsam facere accusamus saepe doloribus nemo quas obcaecati repudiandae, corporis ab sequi reprehenderit.
+    Quia perspiciatis accusamus modi ducimus nam atque illum in, est minus consectetur ipsa amet nulla natus? Voluptatibus atque cumque consectetur iusto, possimus nemo rem sed nisi quos id sint qui!
+    Sit dicta rerum libero. Eos error, quisquam ut cumque doloremque exercitationem, saepe non culpa, nam aliquid fugiat cum corrupti sit neque nulla! Magni deleniti iusto error architecto quo vitae consequuntur.
+</div>
+
+<img src="{{kep1}}" />
+<br>
+<img [src]="kep1" />
+
+
+<br>
+<img src="{{kep2}}" />
+<br>
+<img [src]="kep2" />

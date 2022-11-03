@@ -1,0 +1,18 @@
+.progressbar{
+    height: 30px;
+    background-color: blue;
+    border: 1px solid gray;
+}
+
+.B {
+    text-align: left;
+    background-color: red;
+}
+
+.J {
+    text-align: right;
+}
+
+.K {
+    text-align: center;
+}

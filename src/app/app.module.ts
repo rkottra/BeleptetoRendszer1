@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Sanitizer } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +19,9 @@ import { KosarService } from './kosar.service';
 import { SzereplokComponent } from './szereplok/szereplok.component';
 import { StarwarsService } from './starwars.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { ErrorComponent } from './error/error.component';
+import { ErrorService } from './error.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     KategoriakComponent,
     ElerhetosegekComponent,
     KosarComponent,
-    SzereplokComponent
+    SzereplokComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule
   ],
   providers: [
-    KosarService, StarwarsService
+    KosarService, StarwarsService, ErrorService
   ],
   bootstrap: [AppComponent]
 })

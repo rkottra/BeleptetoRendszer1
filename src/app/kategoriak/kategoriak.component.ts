@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ErrorService } from '../error.service';
 import { KosarService } from '../kosar.service';
 import { TermekModel } from '../models/termek.model';
 
@@ -33,12 +34,16 @@ export class KategoriakComponent implements OnInit {
     }
   ];
 
-  constructor(private kosarszerviz:KosarService) { }
+  constructor(private kosarszerviz:KosarService, private errorszervíz:ErrorService) { }
 
   ngOnInit(): void {
   }
 
   UjTermekKosarba(UjTermek:TermekModel) {
+    if (UjTermek.nev == "Alma") {
+      this.errorszervíz.setError("almát nem lehet venni");
+      return;
+    }
     this.kosarszerviz.Hozzaad(UjTermek, this.kedvezmeny);
   }
 }

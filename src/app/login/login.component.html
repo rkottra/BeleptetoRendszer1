@@ -1,18 +1,22 @@
-<div class="login" *ngIf="!loggedin">
-    <label for="username">Felhasználó név</label>
-    <input type="text" name="username" [(ngModel)]="username" />
 
-    <label for="password">Jelszó</label>
-    <input type="password" name="password" [(ngModel)]="password"/>
+<div *ngIf="!loggedin; then login; else logout" ></div>
 
-    <input type="submit" value="Belépés" (click)="loginClick()" />
-</div>
 
-<div class="login" *ngIf="loggedin">
-    <p>Felhasználó név: <span>{{username}}</span></p>
-    <input type="submit" value="Kijelentkezés" (click)="logoutClick()" />
-</div>
+<ng-template #login>
+    <div class="login" >
+        <label for="username">Felhasználó név</label>
+        <input type="text" name="username" [(ngModel)]="username" />
 
-<div class="error" *ngIf="error != '' ">
-    {{error}}
-</div>
+        <label for="password">Jelszó</label>
+        <input type="password" name="password" [(ngModel)]="password"/>
+
+        <input type="submit" value="Belépés" (click)="loginClick()" />
+    </div>
+</ng-template>
+
+<ng-template #logout>
+    <div class="login" >
+        <p>Felhasználó név: <span>{{username}}</span></p>
+        <input type="submit" value="Kijelentkezés" (click)="logoutClick()" />
+    </div>
+</ng-template>

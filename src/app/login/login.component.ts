@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ErrorService } from '../error.service';
 
 @Component({
   selector: 'app-login',
@@ -10,25 +11,24 @@ export class LoginComponent implements OnInit {
   public username: string = "";
   public password: string = "";
   public loggedin: boolean = false;
-  public error: string = "";
-
-  constructor() { }
+  
+  constructor(private error:ErrorService) { }
 
   ngOnInit(): void {
   }
 
   loginClick() {
-    this.error = "";
+    this.error.deleteError();
     if (this.username == "admin" && this.password == "123") {
       this.loggedin = true;
     } else {
       this.loggedin = false;
-      this.error = "Nem megfelelő felhasználónév vagy jelszó.";
+      this.error.setError("Nem megfelelő felhasználónév vagy jelszó.");
     }
   }
 
   logoutClick() {
-    this.error = "";
+    this.error.deleteError();
     this.loggedin = false;
     this.password = "";
   }
